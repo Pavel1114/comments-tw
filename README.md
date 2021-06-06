@@ -1,9 +1,8 @@
-Задание
+# Тестовое задание
 
 Используя Django (Django REST Framework) и Python3 необходимо разработать бэкенд для сервиса комментариев. Описать предложенное решение, выбранные механизмы хранения и обработки данных, оценить его плюсы и минусы.
 
-Требования
-
+## Требования
 Каждый комментарий имеет привязку к определенному пользователю.
 У каждого комментария есть дата создания.
     1. Комментарии имеют древовидную структуру - есть возможность оставлять комментарии на комментарии с неограниченной степенью вложенности.
@@ -13,10 +12,30 @@
         2. Получение комментариев первого уровня для определенной сущности с пагинацией.
         3. Получение всех дочерних комментариев для заданного комментария или сущности без ограничения по уровню вложенности. Корнем может являться пара идентифицирующая сущность или id комментария, являющегося корневым для данной ветки. Ответ должен быть таким, чтобы на клиенте можно было воссоздать иерархию комментариев.
 
-Дополнительные требования
+###Дополнительные требования
 1. Комментарии могут редактироваться и удаляться. Удаление возможно только, если у комментария нет дочерних комментариев.
 
-Примечания
+###Примечания
 1. Аутентификация/авторизация на уровне бэкенда не обязательна, все данные о пользователях, там, где это нужно, могут приходить в теле запроса одним из параметров.
 2. При решении должна использоваться реляционная СУБД (PostgreSQL, MySQL, SQLite и т.п.)
 3. Приложение должно запускаться в Docker-контейнере.
+
+## Разработка
+    git clone https://github.com/Pavel1114/comments-tw.git
+    docker-compose -f development.yml build
+    docker-compose -f development.yml python manage.py migrate
+    docker-compose -f development.yml python manage.py loaddata example_data_fixture.json
+    docker-compose -f development.yml up
+
+
+    docker-compose -f development.yml pytest
+
+## Прод
+    git clone https://github.com/Pavel1114/comments-tw.git
+    cp -R .envs/.local .envs/.production
+    # меняем пароли и секретные ключи
+    echo "DOCKER_DJANGO_PORT=5011" > .env
+    docker-compose -f production.yml build
+    docker-compose -f production.yml python manage.py migrate
+    docker-compose -f production.yml python manage.py loaddata example_data_fixture.json
+    docker-compose -f production.yml up
