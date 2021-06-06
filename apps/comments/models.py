@@ -14,7 +14,6 @@ class Comment(TimeStampedModel, MPTTModel):
     class Meta:
         verbose_name = "комментарий"
         verbose_name_plural = "комментарии"
-        ordering = ("-created",)
 
     def __str__(self):
         return f"комментарий #{self.pk}"

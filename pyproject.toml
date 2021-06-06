@@ -18,7 +18,18 @@ django-mptt = "^0.12.0"
 django-debug-toolbar = "^3.2.1"
 Werkzeug = "^2.0.1"
 ptpython = "^3.0.17"
+pytest = "^6.2.4"
+pytest-django = "^4.3.0"
+factory-boy = "^3.2.0"
+pytest-factoryboy = "^2.1.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+addopts = "--ds=config.settings.test"
+filterwarnings = [
+    "ignore:'debug_toolbar' defines default_app_config"
+]
+testpaths = "apps"
