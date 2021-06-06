@@ -1,3 +1,6 @@
+from rest_framework.exceptions import ValidationError
+from rest_framework.response import Response
+from rest_framework.status import HTTP_204_NO_CONTENT
 from rest_framework.viewsets import ModelViewSet
 
 from apps.comments.models import Comment
@@ -24,3 +27,10 @@ class CommentsViewSet(ModelViewSet):
             if "entity_id" in query_params:
                 queryset = queryset.filter(entity_id=query_params["entity_id"])
         return queryset
+
+    def destroy(self, request, *args, **kwargs):
+        comment = self.get_object()
+        if comment.children.exists():
+            raise ValidationError("comment has children")
+        self.perform_destroy(comment)
+        return Response(status=HTTP_204_NO_CONTENT)

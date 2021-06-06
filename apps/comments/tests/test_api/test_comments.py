@@ -79,3 +79,19 @@ class TestCommentsList:
         comment_factory.create_batch(4, parent=root)
         res = api_client.get(f"{url}?entity_id={post.id}&entity_type={ContentType.objects.get_for_model(post).id}")
         assert len(res.json()) == 5
+
+
+@pytest.mark.django_db
+class TestCommentsDelete:
+    def test_restrict_deleting_comment_with_descendants(self, api_client, comment_factory):
+        comment = comment_factory()
+        comment_factory.create_batch(5, parent=comment)
+        res = api_client.delete(reverse("comment-detail", kwargs={"pk": comment.pk}))
+        assert res.status_code == 400
+
+    def test_delete_comment(self, api_client, comment_factory):
+        comment = comment_factory()
+        res = api_client.delete(reverse("comment-detail", kwargs={"pk": comment.pk}))
+        assert res.status_code == 204
+        with pytest.raises(Comment.DoesNotExist):
+            Comment.objects.get(pk=comment.pk)
