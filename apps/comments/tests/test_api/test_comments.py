@@ -80,6 +80,12 @@ class TestCommentsList:
         res = api_client.get(f"{url}?entity_id={post.id}&entity_type={ContentType.objects.get_for_model(post).id}")
         assert len(res.json()) == 5
 
+    def test_pagination(self, api_client, comment_factory, url):
+        comment_factory.create_batch(10)
+        res = api_client.get(f"{url}?limit=3")
+        assert len(res.json()["results"]) == 3
+        assert res.json()["next"] is not None
+
 
 @pytest.mark.django_db
 class TestCommentsDelete:

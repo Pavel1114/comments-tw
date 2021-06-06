@@ -1,4 +1,5 @@
 from rest_framework.exceptions import ValidationError
+from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.response import Response
 from rest_framework.status import HTTP_204_NO_CONTENT
 from rest_framework.viewsets import ModelViewSet
@@ -10,6 +11,7 @@ from apps.comments.serializers import CommentSerializer
 class CommentsViewSet(ModelViewSet):
     serializer_class = CommentSerializer
     queryset = Comment.objects.all()
+    pagination_class = LimitOffsetPagination
 
     def filter_queryset(self, queryset):
         queryset = super().filter_queryset(queryset)
