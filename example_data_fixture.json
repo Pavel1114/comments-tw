@@ -1,0 +1,304 @@
+[
+{
+  "model": "blog.post",
+  "pk": 1,
+  "fields": {
+    "created": "2021-05-30T09:59:49.429Z",
+    "modified": "2021-05-30T09:59:49.429Z",
+    "title": "Test post 1",
+    "text": "some text"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 2,
+  "fields": {
+    "created": "2021-05-30T09:59:58.556Z",
+    "modified": "2021-05-30T09:59:58.556Z",
+    "title": "Test post 2",
+    "text": "another text"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 3,
+  "fields": {
+    "created": "2021-05-30T10:00:07.185Z",
+    "modified": "2021-05-30T10:00:07.185Z",
+    "title": "Test post 3",
+    "text": "more text"
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 1,
+  "fields": {
+    "created": "2021-06-03T10:35:35.178Z",
+    "modified": "2021-06-03T10:35:35.179Z",
+    "parent": null,
+    "text": "comment 1",
+    "entity_type": 6,
+    "entity_id": 1,
+    "lft": 1,
+    "rght": 10,
+    "tree_id": 1,
+    "level": 0
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 2,
+  "fields": {
+    "created": "2021-06-03T10:35:45.380Z",
+    "modified": "2021-06-03T10:36:10.589Z",
+    "parent": 1,
+    "text": "comment 2 level",
+    "entity_type": 6,
+    "entity_id": 1,
+    "lft": 2,
+    "rght": 9,
+    "tree_id": 1,
+    "level": 1
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 3,
+  "fields": {
+    "created": "2021-06-03T10:36:19.670Z",
+    "modified": "2021-06-03T10:36:57.848Z",
+    "parent": 2,
+    "text": "3 level",
+    "entity_type": 6,
+    "entity_id": 1,
+    "lft": 3,
+    "rght": 4,
+    "tree_id": 1,
+    "level": 2
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 4,
+  "fields": {
+    "created": "2021-06-03T10:37:14.385Z",
+    "modified": "2021-06-03T10:37:14.385Z",
+    "parent": 2,
+    "text": "ещё один комментарий 3го уровня",
+    "entity_type": 6,
+    "entity_id": 1,
+    "lft": 5,
+    "rght": 6,
+    "tree_id": 1,
+    "level": 2
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 7,
+  "fields": {
+    "created": "2021-06-03T10:41:19.417Z",
+    "modified": "2021-06-03T10:41:19.417Z",
+    "parent": null,
+    "text": "another root comment",
+    "entity_type": 6,
+    "entity_id": 1,
+    "lft": 1,
+    "rght": 2,
+    "tree_id": 3,
+    "level": 0
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 8,
+  "fields": {
+    "created": "2021-06-03T10:41:39.730Z",
+    "modified": "2021-06-03T10:41:39.730Z",
+    "parent": 2,
+    "text": "lorem",
+    "entity_type": 6,
+    "entity_id": 1,
+    "lft": 7,
+    "rght": 8,
+    "tree_id": 1,
+    "level": 2
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 9,
+  "fields": {
+    "created": "2021-06-03T12:30:00.743Z",
+    "modified": "2021-06-03T12:30:00.743Z",
+    "parent": null,
+    "text": "Коммент к третьему посту",
+    "entity_type": 6,
+    "entity_id": 3,
+    "lft": 1,
+    "rght": 6,
+    "tree_id": 4,
+    "level": 0
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 10,
+  "fields": {
+    "created": "2021-06-03T12:36:48.270Z",
+    "modified": "2021-06-03T12:36:48.270Z",
+    "parent": 9,
+    "text": "2nd level",
+    "entity_type": 6,
+    "entity_id": 3,
+    "lft": 2,
+    "rght": 5,
+    "tree_id": 4,
+    "level": 1
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 11,
+  "fields": {
+    "created": "2021-06-03T12:49:08.280Z",
+    "modified": "2021-06-03T12:49:08.280Z",
+    "parent": 10,
+    "text": "another comment",
+    "entity_type": 6,
+    "entity_id": 3,
+    "lft": 3,
+    "rght": 4,
+    "tree_id": 4,
+    "level": 2
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 12,
+  "fields": {
+    "created": "2021-06-05T11:30:24.425Z",
+    "modified": "2021-06-05T11:30:24.425Z",
+    "parent": null,
+    "text": "During reach own figure because dream. Common bit couple director finish evidence. Human where something whether Republican develop it capital. Interesting strategy first race would. Yes yeah nearly. Rule country blood least. Side green plan Republican build. Of build account sister every program focus I. Resource key clearly kitchen sea red. Argue any know particularly scientist process yeah. Better list rise memory run center.",
+    "entity_type": null,
+    "entity_id": null,
+    "lft": 1,
+    "rght": 2,
+    "tree_id": 5,
+    "level": 0
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 13,
+  "fields": {
+    "created": "2021-06-05T11:31:03.759Z",
+    "modified": "2021-06-05T11:31:03.759Z",
+    "parent": null,
+    "text": "Once face ground fund Congress. Article similar only sometimes truth imagine huge. Beyond between TV chance maintain budget story. Sort whether customer future better. Voice play detail white knowledge. Speak represent common two per teach. Name commercial everybody civil class business establish. Avoid likely both most quite major mention. Become tell media food drop.",
+    "entity_type": null,
+    "entity_id": null,
+    "lft": 1,
+    "rght": 6,
+    "tree_id": 6,
+    "level": 0
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 14,
+  "fields": {
+    "created": "2021-06-05T11:31:03.764Z",
+    "modified": "2021-06-05T11:31:03.764Z",
+    "parent": 13,
+    "text": "Could agency doctor. Else beyond recent difficult between. Ask within yes professor yeah than. Really course movie. Choice official blood read north continue strategy. Candidate success raise watch. President book rest chair performance parent similar official. If go its marriage. Business goal raise require.",
+    "entity_type": null,
+    "entity_id": null,
+    "lft": 2,
+    "rght": 5,
+    "tree_id": 6,
+    "level": 1
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 15,
+  "fields": {
+    "created": "2021-06-05T11:31:29.319Z",
+    "modified": "2021-06-05T11:31:29.319Z",
+    "parent": 14,
+    "text": "Option must herself interest. Up pull it budget late writer fine. Actually leg southern wait type challenge single. Strong order do check avoid. Talk these word meet what build. Friend conference quickly take. Article PM light significant democratic.",
+    "entity_type": null,
+    "entity_id": null,
+    "lft": 3,
+    "rght": 4,
+    "tree_id": 6,
+    "level": 2
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 16,
+  "fields": {
+    "created": "2021-06-05T11:34:33.038Z",
+    "modified": "2021-06-05T11:34:46.113Z",
+    "parent": null,
+    "text": "Democratic mouth contain organization character. Rich thank organization sound suffer financial expect imagine. Street he face trip hear education. Company describe tell. Produce act center. Campaign service house may year director. System no do bar bank. Himself very quickly whether per more charge. Win let would new worry late.",
+    "entity_type": 6,
+    "entity_id": 3,
+    "lft": 1,
+    "rght": 2,
+    "tree_id": 7,
+    "level": 0
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 17,
+  "fields": {
+    "created": "2021-06-05T11:35:53.978Z",
+    "modified": "2021-06-05T11:35:53.978Z",
+    "parent": null,
+    "text": "Treatment author discussion drug own quality. Others away old red. Could tax image together building hard lot. Why stage where subject organization. City boy campaign myself but. Organization ok simply yet choose. Five state night push. Will soon sound factor. Clear actually town his person. Use same face piece local.",
+    "entity_type": null,
+    "entity_id": null,
+    "lft": 1,
+    "rght": 2,
+    "tree_id": 8,
+    "level": 0
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 18,
+  "fields": {
+    "created": "2021-06-05T11:36:18.019Z",
+    "modified": "2021-06-05T11:36:18.019Z",
+    "parent": null,
+    "text": "Will study word they source rather. Time tend this plan me deal claim. Hair meeting whose accept likely floor until. Arrive establish media tax. Whole guess within magazine final reflect treat. Capital magazine treatment later possible particularly. Mission southern professor cause feeling strong deal. Prevent management organization president science executive. Eat population exactly reveal perform. Better huge agency market practice family produce box. Cold have play value push well foot start.",
+    "entity_type": 6,
+    "entity_id": 3,
+    "lft": 1,
+    "rght": 2,
+    "tree_id": 9,
+    "level": 0
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 19,
+  "fields": {
+    "created": "2021-06-06T09:12:12.900Z",
+    "modified": "2021-06-06T09:12:12.900Z",
+    "parent": null,
+    "text": "fasdf",
+    "entity_type": null,
+    "entity_id": null,
+    "lft": 1,
+    "rght": 2,
+    "tree_id": 10,
+    "level": 0
+  }
+}
+]
